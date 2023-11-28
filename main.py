@@ -105,22 +105,29 @@ def NumPad():
         
 while True:
     if add.value()==1:
-            val = int(rfid.run("add", NumPad()))
-            lcd.clear()
-            lcd.putstr("Value Added")
-            sleep(0.5)
-            lcd.clear()
-            lcd.putstr("Balance: " + str(val))
+        lcd.clear()
+        val = int(rfid.run("add", NumPad()))
+        lcd.clear()
+        lcd.putstr("Value Added")
+        sleep(1)
+        lcd.clear()
+        lcd.putstr("Balance: " + str(val))
             
     elif sub.value()==1:
-            val = int(rfid.run("sub", NumPad()))
+        lcd.clear()
+        val = rfid.run("sub", NumPad())
+        if val.isdigit() == True:
             lcd.clear()
             lcd.putstr("Value Subtracted")
-            sleep(0.5)
+            sleep(1)
             lcd.clear()
-            lcd.putstr("Balance: " + str(val))
+            lcd.putstr("Balance: " + str(int(val)))
+        else:
+            lcd.clear()
+            lcd.putstr(val)
             
     elif bal.value()==1:
-            val = int(rfid.run("bal", "0"))
-            lcd.clear()
-            lcd.putstr("Balance: " + str(val))
+        lcd.clear()
+        val = int(rfid.run("bal", "0"))
+        lcd.clear()
+        lcd.putstr("Balance: " + str(val))

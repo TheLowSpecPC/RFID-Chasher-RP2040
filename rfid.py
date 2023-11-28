@@ -86,7 +86,7 @@ def run(inp,num):
                                     return re
                                 else:
 #                                    print("No Sufficient Balance")
-                                    return "No Sufficient Balance"
+                                    return "No Sufficient   Balance"
                                 a += 1
                                 rdr.stop_crypto1()
                                 
@@ -111,10 +111,11 @@ def run(inp,num):
                                 for i in data:
                                     datastr = datastr + (chr(i))
                                     hexstr.append(hex(i))
-#                                print(str(datastr))
+#                                    print(str(datastr))
                                 a += 1
                                 rdr.stop_crypto1()
                                 return str(datastr)
+
 
     except KeyboardInterrupt:
         pass
